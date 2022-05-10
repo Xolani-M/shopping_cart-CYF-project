@@ -131,3 +131,24 @@ document.getElementById('orange_juice').addEventListener('click', (event) => {
   element_orangejuice_counter.style.color = '#663366';
 
 });
+var image_list;
+
+
+image_list = ['https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80', 'https://images.unsplash.com/photo-1619250921784-7b2b5070e498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80'];
+let element_images = document.getElementById('images');
+element_images.setAttribute("src", image_list[0]);
+
+
+document.getElementById('next').addEventListener('click', (event) => {
+  image_list.push(image_list.shift());
+  let element_images2 = document.getElementById('images');
+  element_images2.setAttribute("src", image_list[0]);
+
+});
+
+document.getElementById('previous').addEventListener('click', (event) => {
+  image_list.unshift(image_list.pop());
+  let element_images3 = document.getElementById('images');
+  element_images3.setAttribute("src", image_list[0]);
+
+});
